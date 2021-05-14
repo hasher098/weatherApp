@@ -9,9 +9,7 @@ export const useStyles = makeStyles((theme) => ({
     backdropFilter: " blur( 0.0px )",
     borderRadius: "10px",
     border: "1px solid rgba( 255, 255, 255, 0.18 )",
-    marginTop: "2rem",
-    minWidth: "310px",
-    marginBottom: "2rem",
+    marginBottom: "10px",
   },
   infoContainer: {
     fontSize: "26px",

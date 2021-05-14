@@ -14,7 +14,9 @@ const TopBar = () => {
             <button className={classes.button}>Author</button>
           </li>
           <li>
-            <button className={classes.button}>Source</button>
+            <button className={classes.button}>
+              <a href="https://www.github.com/hasher098">Source</a>
+            </button>
           </li>
         </ul>
       </nav>

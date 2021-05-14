@@ -131,7 +131,13 @@ const WeatherInfo = (props) => {
           {futureInfo &&
             futureInfo.map((item, index) => {
               return (
-                <Grid className={styles.futureDayInfo} container xs key={index}>
+                <Grid
+                  className={styles.futureDayInfo}
+                  container
+                  item
+                  xs
+                  key={index}
+                >
                   <Grid item xs={12}>
                     {item.dayName}
                   </Grid>
