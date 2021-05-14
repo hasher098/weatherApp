@@ -1,8 +1,17 @@
-import React from "react";
-
-const MainPage =()=>{
-
-    return <div>xd</div>
-}
+import React, { useState, useEffect, useRef } from "react";
+import AutoComplete from "../autoComplete/AutoComplete";
+import TopBar from "../topBar/TopBar";
+import WeatherInfo from "../weatherInfo/WeatherInfo";
+import { useStyles } from "./MainPageStyles";
+const MainPage = () => {
+  const classes = useStyles();
+  return (
+    <div className={classes.app}>
+      <div className={classes.fixedBg}></div>
+      <TopBar></TopBar>
+      <AutoComplete></AutoComplete>
+    </div>
+  );
+};
 
 export default MainPage;
