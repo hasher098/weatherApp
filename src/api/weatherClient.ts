@@ -14,7 +14,7 @@ export const getCities = async (city) => {
 };
 export const getDetails = async (lat, lng) => {
   return await axios.get(
-    `http://api.geonames.org/countryCodeJSON?formatted=true&lat=${lat}&lng=${lng}&username=hasher098&style=full`
+    `https://api.geonames.org/countryCodeJSON?formatted=true&lat=${lat}&lng=${lng}&username=hasher098&style=full`
   );
 };
 

@@ -68,23 +68,22 @@ const AutoComplete = () => {
   //new Version
 
   const autoCompleteChange = async (event) => {
-    setDisplay(true);
     setSearch(event.target.value);
-    jsonp(
-      `http://gd.geobytes.com/AutoCompleteCity?q=${event.target.value}&sort=size`,
-      null,
-      (err, data) => {
-        if (err) {
-          console.error(err.message);
-        } else {
-          if (data[0] !== "%s" && data[0] !== "") {
-            setAutoCompleteCities(data);
-          } else {
-            setAutoCompleteCities(["No results found"]);
-          }
-        }
-      }
-    );
+    // jsonp(
+    //   `http://gd.geobytes.com/AutoCompleteCity?q=${event.target.value}&sort=size`,
+    //   null,
+    //   (err, data) => {
+    //     if (err) {
+    //       console.error(err.message);
+    //     } else {
+    //       if (data[0] !== "%s" && data[0] !== "") {
+    //         setAutoCompleteCities(data);
+    //       } else {
+    //         setAutoCompleteCities(["No results found"]);
+    //       }
+    //     }
+    //   }
+    // );
   };
 
   return (

@@ -11,36 +11,36 @@ const WeatherInfo = (props) => {
   const [currentInfo, SetCurrentInfo] = useState<CityInfoInterface>({});
   const [futureInfo, setFutureInfo] = useState<FutureInfoInterface[]>([{}]);
   const [currentCountry, setCurrentCountry] = useState("");
-  const showPosition = async (position) => {
-    const response = await getDetails(
-      position.coords.latitude,
-      position.coords.longitude
-    );
-    setCurrentCountry(response.data.countryCode);
-  };
-  const showError = (error) => {
-    switch (error.code) {
-      case error.PERMISSION_DENIED:
-        console.error("User denied the request for Geolocation.");
-        break;
-      case error.POSITION_UNAVAILABLE:
-        console.error("Location information is unavailable.");
-        break;
-      case error.TIMEOUT:
-        console.error("The request to get user location timed out.");
-        break;
-      case error.UNKNOWN_ERROR:
-        console.error("An unknown error occurred.");
-        break;
-    }
-  };
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-      console.log("error");
-    }
-  }, []);
+  // const showPosition = async (position) => {
+  //   const response = await getDetails(
+  //     position.coords.latitude,
+  //     position.coords.longitude
+  //   );
+  //   setCurrentCountry(response.data.countryCode);
+  // };
+  // const showError = (error) => {
+  //   switch (error.code) {
+  //     case error.PERMISSION_DENIED:
+  //       console.error("User denied the request for Geolocation.");
+  //       break;
+  //     case error.POSITION_UNAVAILABLE:
+  //       console.error("Location information is unavailable.");
+  //       break;
+  //     case error.TIMEOUT:
+  //       console.error("The request to get user location timed out.");
+  //       break;
+  //     case error.UNKNOWN_ERROR:
+  //       console.error("An unknown error occurred.");
+  //       break;
+  //   }
+  // };
+  // // useEffect(() => {
+  // //   if (navigator.geolocation) {
+  // //     navigator.geolocation.getCurrentPosition(showPosition, showError);
+  // //   } else {
+  // //     console.log("error");
+  // //   }
+  // // }, []);
 
   useEffect(() => {
     SetCurrentInfo({
@@ -82,8 +82,14 @@ const WeatherInfo = (props) => {
 
   return (
     <Grid container>
-      <Grid container item xs={12} className={styles.todayWeather}>
-        {currentCountry != "" && (
+      <Grid
+        container
+        item
+        xs={12}
+        className={styles.todayWeather}
+        style={{ margin: "10px" }}
+      >
+        {currentInfo != {} && (
           <Grid container item xs={12} className={styles.infoContainer}>
             <Grid item xs={12} className={styles.horizontalPart}>
               {currentInfo.CityName}
@@ -105,9 +111,11 @@ const WeatherInfo = (props) => {
               </Grid>
 
               <Grid item xs={12}>
-                <img
-                  src={`http://openweathermap.org/img/wn/${currentInfo.IconId}@2x.png`}
-                ></img>
+                {currentInfo.IconId != undefined && (
+                  <img
+                    src={`http://openweathermap.org/img/wn/${currentInfo.IconId}@2x.png`}
+                  ></img>
+                )}
               </Grid>
             </Grid>
             <Grid item xs={12} md={4} className={styles.verticalPart}>
@@ -137,12 +145,13 @@ const WeatherInfo = (props) => {
                   item
                   xs
                   key={index}
+                  style={{ margin: "10px" }}
                 >
                   <Grid item xs={12}>
                     {item.dayName}
                   </Grid>
                   <Grid item xs={12}>
-                    {item.iconId && (
+                    {item.iconId != undefined && (
                       <img
                         src={`http://openweathermap.org/img/wn/${item.iconId}@2x.png`}
                       ></img>

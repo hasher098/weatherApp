@@ -6,7 +6,7 @@ const TopBar = () => {
   return (
     <div className={classes.menu}>
       <nav>
-        <ul className={classes.links}>
+        {/* <ul className={classes.links}>
           <li>
             <button className={classes.button}>Contact</button>
           </li>
@@ -18,7 +18,8 @@ const TopBar = () => {
               <a href="https://www.github.com/hasher098">Source</a>
             </button>
           </li>
-        </ul>
+        </ul> */}
+        <p className={classes.title}>Weather App</p>
       </nav>
     </div>
   );

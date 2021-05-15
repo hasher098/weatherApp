@@ -27,4 +27,13 @@ export const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
     position: "relative",
   },
+  title: {
+    color: "white",
+    fontFamily: "Raleway,sans-serif",
+    fontSize: "60px",
+    fontWeight: "lighter",
+    lineHeight: "72px",
+    textAlign: "center",
+    textTransform: "uppercase",
+  },
 }));
