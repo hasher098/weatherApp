@@ -1,46 +1,14 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { useStyles } from "./WeatherInfoStyles";
-import { getDetails } from "../../api/weatherClient";
-import CityInfoInterface from "../../interfaces/CityInfoInterface";
-import FutureInfoInterface from "../../interfaces/FutureInfoInterface";
 import Grid from "@material-ui/core/Grid";
 import ArrowUpwardRoundedIcon from "@material-ui/icons/ArrowUpwardRounded";
+import { useEffect, useState } from "react";
+import CityInfoInterface from "../../interfaces/CityInfoInterface";
+import FutureInfoInterface from "../../interfaces/FutureInfoInterface";
+import { useStyles } from "./WeatherInfoStyles";
 const WeatherInfo = (props) => {
   const styles = useStyles();
   const [currentInfo, SetCurrentInfo] = useState<CityInfoInterface>({});
   const [futureInfo, setFutureInfo] = useState<FutureInfoInterface[]>([{}]);
   const [currentCountry, setCurrentCountry] = useState("");
-  // const showPosition = async (position) => {
-  //   const response = await getDetails(
-  //     position.coords.latitude,
-  //     position.coords.longitude
-  //   );
-  //   setCurrentCountry(response.data.countryCode);
-  // };
-  // const showError = (error) => {
-  //   switch (error.code) {
-  //     case error.PERMISSION_DENIED:
-  //       console.error("User denied the request for Geolocation.");
-  //       break;
-  //     case error.POSITION_UNAVAILABLE:
-  //       console.error("Location information is unavailable.");
-  //       break;
-  //     case error.TIMEOUT:
-  //       console.error("The request to get user location timed out.");
-  //       break;
-  //     case error.UNKNOWN_ERROR:
-  //       console.error("An unknown error occurred.");
-  //       break;
-  //   }
-  // };
-  // // useEffect(() => {
-  // //   if (navigator.geolocation) {
-  // //     navigator.geolocation.getCurrentPosition(showPosition, showError);
-  // //   } else {
-  // //     console.log("error");
-  // //   }
-  // // }, []);
 
   useEffect(() => {
     SetCurrentInfo({

@@ -1,13 +1,9 @@
+import SearchIcon from "@material-ui/icons/Search";
 import React, { useEffect, useRef, useState } from "react";
 import { getCities, getFutureWeather } from "../../api/weatherClient";
-import { useStyles } from "./AutoCompleteStyles";
 import jsonData from "../../data/countries.json";
-import JsonInterface from "../../interfaces/JsonInterface";
-import SearchIcon from "@material-ui/icons/Search";
-import Grid from "@material-ui/core/Grid";
-import jsonp from "jsonp";
 import WeatherInfo from "../weatherInfo/WeatherInfo";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import { useStyles } from "./AutoCompleteStyles";
 const AutoComplete = () => {
   const classes = useStyles();
   const [data, setData] = useState("");
@@ -69,21 +65,6 @@ const AutoComplete = () => {
 
   const autoCompleteChange = async (event) => {
     setSearch(event.target.value);
-    // jsonp(
-    //   `http://gd.geobytes.com/AutoCompleteCity?q=${event.target.value}&sort=size`,
-    //   null,
-    //   (err, data) => {
-    //     if (err) {
-    //       console.error(err.message);
-    //     } else {
-    //       if (data[0] !== "%s" && data[0] !== "") {
-    //         setAutoCompleteCities(data);
-    //       } else {
-    //         setAutoCompleteCities(["No results found"]);
-    //       }
-    //     }
-    //   }
-    // );
   };
 
   return (

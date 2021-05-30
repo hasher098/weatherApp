@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import AutoComplete from "../autoComplete/AutoComplete";
 import TopBar from "../topBar/TopBar";
-import WeatherInfo from "../weatherInfo/WeatherInfo";
 import { useStyles } from "./MainPageStyles";
 const MainPage = () => {
   const classes = useStyles();
