@@ -4,7 +4,7 @@ It is an application created with React. Designed and created to show my knowled
 
 # Screenshots
 ![weather](https://user-images.githubusercontent.com/48457306/120400620-7c8df980-c33e-11eb-827f-2d72ac27a756.jpg)
-
+![mobileWeather](https://user-images.githubusercontent.com/48457306/120400695-af37f200-c33e-11eb-885c-ce74da28e1b9.jpg)
 ## Run Application
 
 Install all packages
