@@ -1,7 +1,8 @@
 # Description
 
 It is an application created with React. Designed and created to show my knowledge of React and REST Api. In this application the user enters the name of the city in search-bar and then the weather for next 7 days is displayed below. The address where you can see the application in action is [Link](https://hasher098.github.io/weatherApp/) `github`.
-
+               
+               ![weather](https://user-images.githubusercontent.com/48457306/120400620-7c8df980-c33e-11eb-827f-2d72ac27a756.jpg)
 ## Run Application
 
 Install all packages
